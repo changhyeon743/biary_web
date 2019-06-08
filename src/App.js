@@ -1,6 +1,7 @@
 import React from 'react';
 import Book from './Book/Book'
 import axios from 'axios'
+import './App.css'
 export default class App extends React.Component {
   constructor() {
     super();
@@ -19,11 +20,14 @@ export default class App extends React.Component {
     if (this.state.friendData != null) {
       return (
         <div className="App">
-          <img src = {this.state.friendData[0].data.user.profileURL}/>
-          <span>{this.state.friendData[0].data.user.name}</span>
+          <div className="profile">
+            <img src = {this.state.friendData[0].data.user.profileURL}/>
+            <span>{this.state.friendData[0].data.user.name}</span>
+          </div>
           
           {this.state.friendData[0].data.books.map(book => {
             return <Book
+              key={book.token}
               imgLink={book.imageURL}
               title={book.title}
             />

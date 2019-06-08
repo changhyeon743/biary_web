@@ -4,6 +4,7 @@ import './book.css'
 export default class Book extends React.Component {
     constructor() {
         super();
+        
     }
     
     render() {
