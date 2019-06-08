@@ -8,9 +8,8 @@
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
   },
-  
   "scripts": {
-    "start": "PORT=3001 react-scripts start",
+    "start": "PORT=3001 DANGEROUSLY_DISABLE_HOST_CHECK=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -30,5 +29,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:9000"
+  "proxy": "http://localhost:9000",
+  "devDependencies": {
+    "react-app-rewired": "^2.1.3"
+  }
 }
