@@ -20,18 +20,22 @@ export default class App extends React.Component {
     if (this.state.friendData != null) {
       return (
         <div className="App">
-          <div className="profile">
-            <img src = {this.state.friendData[0].data.user.profileURL}/>
-            <span>{this.state.friendData[0].data.user.name}</span>
+          {this.state.friendData.map(item => {
+            <div className="profile">
+            <img src = {item.data.user.profileURL}/>
+            <span>{item.data.user.name}</span>
           </div>
           
-          {this.state.friendData[0].data.books.map(book => {
+          {item.data.books.map(book => {
             return <Book
               key={book.token}
               imgLink={book.imageURL}
               title={book.title}
             />
           })}
+
+          })}
+          
         </div>
       )
     } else {
