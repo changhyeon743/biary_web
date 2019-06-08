@@ -21,10 +21,10 @@ export default class App extends React.Component {
       return (
         <div className="App">
           {this.state.friendData.map(item => {
-            <div className="profile">
+            return (<div className="profile">
             <img src = {item.data.user.profileURL}/>
             <span>{item.data.user.name}</span>
-          </div>
+            </div>)
           
           {item.data.books.map(book => {
             return <Book
