@@ -17,13 +17,15 @@ export default class App extends React.Component {
   }
 
   render() {
+    console.log("console..")
     if (this.state.getFriendsData != null) {
       return (
         <div className="App">
           <button onClick={this.getFriendsData}>클릭</button>
           {this.state.friendData[0].data.books.map(book => {
+            console.log(book)
             return <Book
-              imgLink={book.imgLink}
+              imgLink={book.imageURL}
               title={book.title}
             />
           })}
@@ -56,6 +58,7 @@ export default class App extends React.Component {
       .then(response => {
         this.setState({ friendData: response.data.data })
         console.log(this.state.friendData)
+        this.render()
       })
       .catch(response => { console.log(response) });
   }
