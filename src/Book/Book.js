@@ -8,7 +8,7 @@ export default class Book extends React.Component {
     
     render() {
         return(
-            <div>
+            <div className = "Book">
                 <img src={this.props.imgLink}/>
                 <span>{this.props.title}</span>
             </div>

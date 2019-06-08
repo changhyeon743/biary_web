@@ -6,17 +6,18 @@
     margin: 0px;
 }
 
-div {
+div.Book {
     width: 83px;
     height: 128px;
     outline: 1px black;
     padding: 4px;
     margin: 8px;
+    float: left;
 }
-div > img {
+div.Book > img {
     width: 100%;
     height: 100%;
 }
-div > span {
+div.Book > span {
     font-size: 13px;
 }
