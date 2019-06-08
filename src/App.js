@@ -26,6 +26,7 @@ export default class App extends React.Component {
             <div className="profile">
             <img src = {item.data.user.profileURL}/>
             <span>{item.data.user.name}</span>
+            </div>
             {item.data.books.map(book => {
               return <Book
                 key={book.token}
@@ -33,7 +34,6 @@ export default class App extends React.Component {
                 title={book.title}
               />
             })}
-            </div>
             </div>
             )
           
