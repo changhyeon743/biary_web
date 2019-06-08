@@ -1,5 +1,7 @@
 div.profile {
   float: none;
+  margin: 16px;
+  padding: 8px;
   width: 100%;
   height: 100px;
   outline: 1px black;
@@ -7,4 +9,5 @@ div.profile {
 
 div.profile > * {
   float: left;
+  
 }
