@@ -11,6 +11,7 @@ div {
     height: 128px;
     outline: 1px black;
     padding: 4px;
+    margin: 8px;
 }
 div > img {
     width: 100%;
