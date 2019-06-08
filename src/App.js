@@ -18,7 +18,7 @@ export default class App extends React.Component {
 
   render() {
     console.log("console..")
-    if (this.state.getFriendsData != null) {
+    if (this.state.friendData != null) {
       return (
         <div className="App">
           <button onClick={this.getFriendsData}>클릭</button>
