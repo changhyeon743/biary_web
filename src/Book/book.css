@@ -10,8 +10,8 @@ div.Book {
     width: 83px;
     height: 128px;
     outline: 1px black;
-    padding: 4px;
-    margin: 8px;
+    padding: 8px;
+    margin: 16px;
     float: left;
 }
 div.Book > img {
