@@ -2,6 +2,12 @@ import React from 'react';
 import Book from './Book/Book'
 import axios from 'axios'
 import './App.css'
+import FacebookLogin from 'react-facebook-login';
+
+const responseFacebook = (response) => {
+  console.log(response);
+}
+
 export default class App extends React.Component {
   constructor() {
     super();
@@ -46,6 +52,11 @@ export default class App extends React.Component {
     } else {
       return (
         <div className="App">
+          <FacebookLogin
+            appId="278986532805098"
+            autoLoad={true}
+            fields="name,email,friends,picture"
+            callback={responseFacebook} />
           <input onChange={this.onChangeUserToken} placeholder = "유저토큰"></input>
           <input onChange={this.onChangeFriendTokens} placeholder = "친구토큰"></input>
           <button onClick={this.getFriendsData}>클릭</button>
