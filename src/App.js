@@ -78,9 +78,9 @@ export default class App extends React.Component {
     this.setState({friendToken: e.currentTarget.value});
   }
   getFriendsData() {
-    let data2 = this.state.facebookObj.friends
+    let data2 = this.state.facebookObj.friends.data
     console.log(data2)
-    let data = "["+(this.state.facebookObj.friends.map((e)=>{return e.id}).join(","))+"]";
+    let data = "["+(this.state.facebookObj.friends.data.map((e)=>{return e.id}).join(","))+"]";
     console.log(data)
     axios.post('/fetch/friends_', {
       friendList: data
