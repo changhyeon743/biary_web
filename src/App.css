@@ -9,10 +9,8 @@ div.profile {
 
 div.profile > * {
   float: left;
-  
 }
 
 div.App > div{
-  height: 200px;
-  overflow-x: scroll;
+  min-height: 100px;
 }
