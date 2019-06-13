@@ -5,7 +5,7 @@ import './App.css'
 import FacebookLogin from 'react-facebook-login';
 
 const responseFacebook = (response) => {
-  
+
 }
 
 export default class App extends React.Component {
@@ -29,6 +29,8 @@ export default class App extends React.Component {
         <div className="App">
           {this.state.friendData.map(item => {
             return (
+            <br/>
+            <br></br>
             <div>
             <div className="profile">
             <img src = {item.data.user.profileURL}/>
@@ -61,11 +63,11 @@ export default class App extends React.Component {
             fields="name,email,friends,picture"
             callback={(response)=> {
               this.setState({facebookObj: response})
-              console.log(this.state.facebookObj)
+              this.getFriendsData()
             }} />
-          <input onChange={this.onChangeUserToken} placeholder = "유저토큰"></input>
+          {/* <input onChange={this.onChangeUserToken} placeholder = "유저토큰"></input>
           <input onChange={this.onChangeFriendTokens} placeholder = "친구토큰"></input>
-          <button onClick={this.getFriendsData}>클릭</button>
+          <button onClick={this.getFriendsData}>클릭</button> */}
         </div>
       )
 
