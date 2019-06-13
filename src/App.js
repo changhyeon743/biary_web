@@ -5,13 +5,14 @@ import './App.css'
 import FacebookLogin from 'react-facebook-login';
 
 const responseFacebook = (response) => {
-  console.log(response);
+  
 }
 
 export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      facebookObj: Object,
       selfToken: String,
       friendToken: String,
       friendData: null
@@ -56,7 +57,10 @@ export default class App extends React.Component {
             appId="278986532805098"
             autoLoad={true}
             fields="name,email,friends,picture"
-            callback={responseFacebook} />
+            callback={(response)=> {
+              this.setState({facebookObj: response})
+              console.log(this.state.facebookObj)
+            }} />
           <input onChange={this.onChangeUserToken} placeholder = "유저토큰"></input>
           <input onChange={this.onChangeFriendTokens} placeholder = "친구토큰"></input>
           <button onClick={this.getFriendsData}>클릭</button>
