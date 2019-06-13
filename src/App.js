@@ -31,8 +31,7 @@ export default class App extends React.Component {
             return (
             
             <div>
-            <br/>
-            <br></br>
+
             <div className="profile">
             <img src = {item.data.user.profileURL}/>
             <span>{item.data.user.name}</span>
@@ -44,8 +43,7 @@ export default class App extends React.Component {
                 title={book.title}
               />
             })}
-            <br></br>
-            <br></br>
+            
             </div>
             )
           

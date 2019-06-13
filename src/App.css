@@ -11,3 +11,9 @@ div.profile > * {
   float: left;
   
 }
+
+div.App > div{
+  width: 100%;
+  height: 164px;
+  overflow-x: auto;
+}
