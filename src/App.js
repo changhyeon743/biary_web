@@ -29,9 +29,10 @@ export default class App extends React.Component {
         <div className="App">
           {this.state.friendData.map(item => {
             return (
+            
+            <div>
             <br/>
             <br></br>
-            <div>
             <div className="profile">
             <img src = {item.data.user.profileURL}/>
             <span>{item.data.user.name}</span>
