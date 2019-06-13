@@ -13,5 +13,6 @@ div.profile > * {
 
 div.App > div{
   width: 100%;
-  min-height: 100px;
+  height: 200px;
+  overflow: scroll;
 }
