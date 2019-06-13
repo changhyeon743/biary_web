@@ -41,6 +41,8 @@ export default class App extends React.Component {
                 title={book.title}
               />
             })}
+            <br></br>
+            <br></br>
             </div>
             )
           
