@@ -86,8 +86,8 @@ export default class App extends React.Component {
       friendList: data
     })
       .then(response => {
-        this.setState({ friendData: response })
-        console.log(this.state.friendData)
+        //this.setState({ friendData: response })
+        console.log(response)
         this.render()
       })
       .catch(response => { console.log(response) });
