@@ -30,11 +30,12 @@ export default class App extends React.Component {
           {this.state.friendData.map(item => {
             return (
             <div>
-
+            
             <div className="profile">
             <img src = { 'https://graph.facebook.com/'+item.id+'/picture?type=large' }/>
-            <span>{item.name}</span>
             </div>
+            {/* <span>{item.name}</span> */}
+            
             {/* {item.data.books.map(book => {
               return <Book
                 key={book.token}
