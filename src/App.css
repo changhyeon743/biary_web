@@ -21,7 +21,5 @@ div.profile > span {
 
 div.App > div{
   margin: 16dp;
-  width: 45px;
-  height: 45px;
   float: left;
 }
