@@ -37,7 +37,7 @@ export default class App extends React.Component {
       return (
 
         <div className="App">
-          {this.state.friendData.map(item,i => {
+          {this.state.friendData.map((item,i) => {
             return (
               <div className="profile" key={i}>
 
