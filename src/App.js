@@ -45,7 +45,7 @@ export default class App extends React.Component {
           })}
           <div>
             
-          {bookDatas.length > 0 ? this.state.bookDatas[0].data.books.map(book => {
+          {bookDatas != null ? this.state.bookDatas[0].data.books.map(book => {
               return <Book
                 key={book.token}
                 imgLink={book.imageURL}
