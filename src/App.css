@@ -15,11 +15,12 @@ div.profile > img {
   border-radius: 40px;
 }
 div.profile > span {
-  font-size: 10sp;
+  font-size: 10dp;
 }
 
 
 div.App > div{
+  margin: 16dp;
   width: 45px;
   height: 45px;
   float: left;

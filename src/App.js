@@ -32,7 +32,7 @@ export default class App extends React.Component {
             <div>
             
             <div className="profile">
-            <img src = { 'https://graph.facebook.com/'+item.id+'/picture?type=large' }/>
+            <img src = { 'https://graph.facebook.com/'+item.id+'/picture?type=small' }/>
             <span>{item.name}</span>
             </div>
            
