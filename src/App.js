@@ -49,7 +49,6 @@ export default class App extends React.Component {
           {this.state.showPopup ?
             <Popup
               bookDatas={this.state.bookDatas}
-
               closePopup={this.togglePopup.bind(this)}
             />
             : null

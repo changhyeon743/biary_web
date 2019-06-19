@@ -7,13 +7,15 @@ export default class Popup extends React.Component {
         return (
             <div className='popup'>
                 <div className='popup_inner'>
-                <button onClick={this.props.closePopup}>close me</button>
+                <button onClick={this.props.closePopup}>X</button>
                     {this.props.bookDatas != null && this.props.bookDatas[0].data.books.map(book => {
-                        return <Book
+                        if (book.isPublic) {
+                            return <Book
                             key={book.token}
                             imgLink={book.imageURL}
                             title={book.title}
                         />
+                        }
                     })}
                     
 
