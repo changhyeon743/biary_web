@@ -17,5 +17,11 @@
     bottom: 25%;  
     margin: auto;  
     border-radius: 20px;  
-    background: white;  
+    background: white; 
+    overflow: scroll; 
+  }
+  .popup_inner > button {
+    position: absolute;
+    right: 4px;
+    top: 4px;
   }
