@@ -29,20 +29,19 @@ export default class App extends React.Component {
         <div className="App">
           {this.state.friendData.map(item => {
             return (
-            
             <div>
 
             <div className="profile">
             <img src = {item.data.user.profileURL}/>
             <span>{item.data.user.name}</span>
             </div>
-            {item.data.books.map(book => {
+            {/* {item.data.books.map(book => {
               return <Book
                 key={book.token}
                 imgLink={book.imageURL}
                 title={book.title}
               />
-            })}
+            })} */}
             
             </div>
             )
@@ -64,7 +63,7 @@ export default class App extends React.Component {
             callback={(response)=> {
               console.log(response)
               this.setState({facebookObj: response})
-              this.getFriendsData()
+              //this.getFriendsData()
             }} />
           {/* <input onChange={this.onChangeUserToken} placeholder = "유저토큰"></input>
           <input onChange={this.onChangeFriendTokens} placeholder = "친구토큰"></input>
