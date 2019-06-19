@@ -29,12 +29,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    <Router history = {browserHistory}>
-      <Route path = "/" component = {App}>
-         <IndexRoute component = {App} />
-         <Route path = "books" component = {BookView} />
-      </Route>
-   </Router>
+    
     if (this.state.friendData != null) {
       return (
         <div className="App">
