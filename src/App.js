@@ -60,6 +60,7 @@ export default class App extends React.Component {
             appId="278986532805098"
             autoLoad={true}
             fields="name,email,friends,picture"
+            scope="public_profile,user_friends"
             callback={(response)=> {
               this.setState({facebookObj: response})
               this.getFriendsData()
