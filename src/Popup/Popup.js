@@ -1,5 +1,6 @@
 import React from 'react';
 import './Popup.css';
+import Book from '../Book/Book'
 
 export default class Popup extends React.Component {
     render() {
