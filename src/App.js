@@ -39,7 +39,9 @@ export default class App extends React.Component {
             <div>
             
             <div className="profile">
-            <img src = { 'https://graph.facebook.com/'+item.id+'/picture?type=small' } onClick=""/>
+            <Link to = "/books"><img src = { 'https://graph.facebook.com/'+item.id+'/picture?type=small' }/></Link>
+
+            
             <span>{item.name}</span>
             </div>
            
