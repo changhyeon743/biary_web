@@ -21,7 +21,7 @@ export default class App extends React.Component {
       selfToken: String,
       friendToken: String,
       friendData: null,
-      showPopup: Boolean
+      showPopup: false
     }
 
     this.getFriendsData = this.getFriendsData.bind(this);
