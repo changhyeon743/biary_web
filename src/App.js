@@ -45,13 +45,13 @@ export default class App extends React.Component {
           })}
           <div>
             
-          {bookDatas != null ? this.state.bookDatas[0].data.books.map(book => {
+          {/* {bookDatas != null && this.state.bookDatas[0].data.books.map(book => {
               return <Book
                 key={book.token}
                 imgLink={book.imageURL}
                 title={book.title}
               />
-            }) : ""}
+            })} */}
           </div>
         </div>
       )
@@ -83,6 +83,7 @@ export default class App extends React.Component {
     console.log(e)
 
     this.getBooks(id);
+    console.log(this.state.bookDatas)
   }
 
   onChangeUserToken(e) {
@@ -97,9 +98,7 @@ export default class App extends React.Component {
       friendList: data
     })
       .then(response => {
-        console.log(response.data.data)
         this.setState({ bookDatas: response.data.data })
-        console.log(response)
         this.render()
       })
       .catch(response => { console.log(response) });
