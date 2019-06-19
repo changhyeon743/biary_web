@@ -62,6 +62,7 @@ export default class App extends React.Component {
             fields="name,email,friends,picture"
             scope="public_profile,user_friends"
             callback={(response)=> {
+              console.log(response)
               this.setState({facebookObj: response})
               this.getFriendsData()
             }} />
