@@ -1,5 +1,6 @@
 import React from 'react';
 import Book from './Book/Book'
+
 import axios from 'axios'
 import { Route } from 'react-router-dom';
 
@@ -28,6 +29,12 @@ export default class App extends React.Component {
   }
 
   render() {
+    <Router history = {browserHistory}>
+      <Route path = "/" component = {App}>
+         <IndexRoute component = {App} />
+         <Route path = "books" component = {BookView} />
+      </Route>
+   </Router>
     if (this.state.friendData != null) {
       return (
         <div className="App">
@@ -55,7 +62,6 @@ export default class App extends React.Component {
           
 
           })}
-          <Route path="/books" component={BookView}/>
 
         </div>
       )
@@ -84,7 +90,7 @@ export default class App extends React.Component {
   }
   
   imageClick() {
-    
+
   }
 
   onChangeUserToken(e) {
