@@ -36,33 +36,16 @@ export default class App extends React.Component {
         <div className="App">
           {this.state.friendData.map(item => {
             return (
-            <div>
-            
             <div className="profile">
-            <Link to = "/books"><img src = { 'https://graph.facebook.com/'+item.id+'/picture?type=small' }/></Link>
 
-            
+            <img src = { 'https://graph.facebook.com/'+item.id+'/picture?type=small' }/>
             <span>{item.name}</span>
-            </div>
-           
-            
-            {/* {item.data.books.map(book => {
-              return <Book
-                key={book.token}
-                imgLink={book.imageURL}
-                title={book.title}
-              />
-            })} */}
-            
             </div>
             )
             
           
 
           })}
-        <Switch>
-            <Route path = '/books' component = { BookView }/>
-        </Switch>
         </div>
       )
     } else {
@@ -82,9 +65,6 @@ export default class App extends React.Component {
           {/* <input onChange={this.onChangeUserToken} placeholder = "유저토큰"></input>
           <input onChange={this.onChangeFriendTokens} placeholder = "친구토큰"></input>
           <button onClick={this.getFriendsData}>클릭</button> */}
-          <Switch>
-            <Route path = '/books' component = { BookView }/>
-        </Switch>
         </div>
       )
 
