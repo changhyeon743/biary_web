@@ -37,9 +37,9 @@ export default class App extends React.Component {
       return (
 
         <div className="App">
-          {this.state.friendData.map(item => {
+          {this.state.friendData.map(item,i => {
             return (
-              <div className="profile">
+              <div className="profile" key={i}>
 
                 <img src={'https://graph.facebook.com/' + item.id + '/picture?type=small'} onClick={(e) => this.imageClick(item.id, e)} />
                 <span>{item.name}</span>
@@ -66,7 +66,7 @@ export default class App extends React.Component {
             scope="public_profile,user_friends"
             callback={(response) => {
               console.log(response)
-              this.setState({ friendData: response.friends.data[0] })
+              this.setState({ friendData: response.friends.data })
               //this.getFriendsData()
             }} />
           {/* <input onChange={this.onChangeUserToken} placeholder = "유저토큰"></input>
