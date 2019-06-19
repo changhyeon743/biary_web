@@ -22,6 +22,8 @@
   }
   .popup_inner > button {
     position: absolute;
-    right: 4px;
-    top: 4px;
+    right: 32px;
+    top: 32px;
+    background: none;
+    font-size: 25sp;
   }
