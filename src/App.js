@@ -45,13 +45,6 @@ export default class App extends React.Component {
               </div>
             )
           })}
-          {/* {this.state.bookDatas != null && this.state.bookDatas[0].data.books.map(book => {
-              return <Book
-                key={book.token}
-                imgLink={book.imageURL}
-                title={book.title}
-              />
-            })} */}
           {this.state.showPopup ?
             <Popup
               bookDatas={this.state.bookDatas}
