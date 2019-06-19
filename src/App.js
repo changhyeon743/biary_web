@@ -16,7 +16,7 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      facebookObj: Object,
+      bookDatas: [Object],
       selfToken: String,
       friendToken: String,
       friendData: null
@@ -25,7 +25,7 @@ export default class App extends React.Component {
     this.getFriendsData = this.getFriendsData.bind(this);
     this.onChangeFriendTokens = this.onChangeFriendTokens.bind(this);
     this.onChangeUserToken = this.onChangeUserToken.bind(this);
-    this.imageClick = this.imageClick.bind(this);
+    this.getBooks = this.getBooks.bind(this);
   }
 
   render() {
@@ -38,11 +38,14 @@ export default class App extends React.Component {
             return (
             <div className="profile">
 
-            <img src = { 'https://graph.facebook.com/'+item.id+'/picture?type=small' }/>
+            <img src = { 'https://graph.facebook.com/'+item.id+'/picture?type=small' } onClick={(e) => this.imageClick(item.id, e)}/>
             <span>{item.name}</span>
             </div>
             )
           })}
+          <div>
+
+          </div>
         </div>
       )
     } else {
@@ -55,8 +58,7 @@ export default class App extends React.Component {
             scope="public_profile,user_friends"
             callback={(response)=> {
               console.log(response)
-              this.setState({facebookObj: response})
-              this.setState({friendData: this.state.facebookObj.friends.data})
+              this.setState({friendData: response.friends.data})
               //this.getFriendsData()
             }} />
           {/* <input onChange={this.onChangeUserToken} placeholder = "유저토큰"></input>
@@ -69,8 +71,9 @@ export default class App extends React.Component {
 
   }
   
-  imageClick() {
-
+  imageClick(e,id) {
+    console.log("e: "+e);
+    console.log("id: "+id)
   }
 
   onChangeUserToken(e) {
@@ -78,6 +81,19 @@ export default class App extends React.Component {
   }
   onChangeFriendTokens(e) {
     this.setState({friendToken: e.currentTarget.value});
+  }
+  getBooks(friendID) {
+    let data = "["+(friendID)+"]";
+    axios.post('/fetch/friends_', {
+      friendList: data
+    })
+      .then(response => {
+        console.log(response.data.data)
+        this.setState({ friendData: response.data.data })
+        console.log(response)
+        this.render()
+      })
+      .catch(response => { console.log(response) });
   }
   getFriendsData() {
     let data2 = this.state.facebookObj.friends.data
