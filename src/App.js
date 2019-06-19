@@ -45,13 +45,13 @@ export default class App extends React.Component {
           })}
           <div>
             
-          {/* {bookDatas != null && this.state.bookDatas[0].data.books.map(book => {
+          {bookDatas != null && this.state.bookDatas[0].data.books.map(book => {
               return <Book
                 key={book.token}
                 imgLink={book.imageURL}
                 title={book.title}
               />
-            })} */}
+            })}
           </div>
         </div>
       )
@@ -65,7 +65,7 @@ export default class App extends React.Component {
             scope="public_profile,user_friends"
             callback={(response)=> {
               console.log(response)
-              this.setState({friendData: response.friends.data})
+              this.setState({friendData: response.friends.data[0]})
               //this.getFriendsData()
             }} />
           {/* <input onChange={this.onChangeUserToken} placeholder = "유저토큰"></input>
@@ -79,8 +79,6 @@ export default class App extends React.Component {
   }
   
   imageClick(id,e) {
-    console.log(id);
-    console.log(e)
 
     this.getBooks(id);
     console.log(this.state.bookDatas)
