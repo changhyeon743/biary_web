@@ -1,10 +1,7 @@
 div.profile {
   margin: 16px;
   padding: 8px;
-  width: 100%;
-  height: 100%;
   outline: 1px black;
-  float: left;
 }
 
 
@@ -19,7 +16,7 @@ div.profile > span {
 }
 
 
-div.App > div{
+div.App{
   margin: 16dp;
   float: left;
 }

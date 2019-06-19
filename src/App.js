@@ -42,9 +42,6 @@ export default class App extends React.Component {
             <span>{item.name}</span>
             </div>
             )
-            
-          
-
           })}
         </div>
       )
