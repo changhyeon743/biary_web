@@ -37,9 +37,9 @@ export default class App extends React.Component {
       return (
 
         <div className="App">
-          {this.state.friendData.map((item, i) => {
+          {this.state.friendData.map(item => {
             return (
-              <div className="profile" key={i}>
+              <div className="profile">
 
                 <img src={'https://graph.facebook.com/' + item.id + '/picture?type=small'} onClick={(e) => this.imageClick(item.id, e)} />
                 <span>{item.name}</span>
