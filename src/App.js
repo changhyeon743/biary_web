@@ -84,7 +84,7 @@ export default class App extends React.Component {
   }
   
   imageClick() {
-
+    
   }
 
   onChangeUserToken(e) {
