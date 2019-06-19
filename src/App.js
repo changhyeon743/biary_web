@@ -42,7 +42,7 @@ export default class App extends React.Component {
 
                 <img src={'https://graph.facebook.com/' + item.id + '/picture?type=small'} onClick={(e) => this.imageClick(item.id, e)} />
                 <span>{item.name}</span>
-              </div>
+              </div> 
             )
           })}
           {this.state.showPopup ?
