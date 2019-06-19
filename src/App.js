@@ -88,8 +88,8 @@ export default class App extends React.Component {
   imageClick(id, e) {
 
     this.getBooks(id);
-    console.log(this.state.bookDatas)
-    this.togglePopup();
+    
+    
   }
 
   onChangeUserToken(e) {
@@ -105,6 +105,8 @@ export default class App extends React.Component {
     })
       .then(response => {
         this.setState({ bookDatas: response.data.data })
+        console.log(this.state.bookDatas)
+        this.togglePopup();
         this.render()
       })
       .catch(response => { console.log(response) });
