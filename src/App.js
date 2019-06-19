@@ -32,10 +32,7 @@ export default class App extends React.Component {
     
     if (this.state.friendData != null) {
       return (
-        <Switch>
-            <Route exact path="/" component = { App }/>
-            <Route path = '/books' component = { BookView }/>
-        </Switch>
+        
         <div className="App">
           {this.state.friendData.map(item => {
             return (
@@ -61,7 +58,10 @@ export default class App extends React.Component {
           
 
           })}
-
+        <Switch>
+            <Route exact path="/" component = { App }/>
+            <Route path = '/books' component = { BookView }/>
+        </Switch>
         </div>
       )
     } else {
