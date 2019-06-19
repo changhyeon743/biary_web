@@ -16,7 +16,7 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      bookDatas: [Object],
+      bookDatas: Object,
       selfToken: String,
       friendToken: String,
       friendData: null
@@ -44,7 +44,13 @@ export default class App extends React.Component {
             )
           })}
           <div>
-
+          {/* {this.state.bookDatas.data.books.map(book => {
+              return <Book
+                key={book.token}
+                imgLink={book.imageURL}
+                title={book.title}
+              />
+            })} */}
           </div>
         </div>
       )
@@ -71,9 +77,11 @@ export default class App extends React.Component {
 
   }
   
-  imageClick(e,id) {
-    console.log("e: "+e);
-    console.log("id: "+id)
+  imageClick(id,e) {
+    console.log(id);
+    console.log(e)
+
+    this.getBooks(id);
   }
 
   onChangeUserToken(e) {
@@ -89,7 +97,7 @@ export default class App extends React.Component {
     })
       .then(response => {
         console.log(response.data.data)
-        this.setState({ friendData: response.data.data })
+        this.setState({ bookDatas: response.data.data })
         console.log(response)
         this.render()
       })
