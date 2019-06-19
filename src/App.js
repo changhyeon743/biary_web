@@ -1,8 +1,11 @@
 import React from 'react';
 import Book from './Book/Book'
 import axios from 'axios'
+import { Route } from 'react-router-dom';
+
 import './App.css'
 import FacebookLogin from 'react-facebook-login';
+import BookView from './BookView';
 
 const responseFacebook = (response) => {
 
@@ -21,6 +24,7 @@ export default class App extends React.Component {
     this.getFriendsData = this.getFriendsData.bind(this);
     this.onChangeFriendTokens = this.onChangeFriendTokens.bind(this);
     this.onChangeUserToken = this.onChangeUserToken.bind(this);
+    this.imageClick = this.imageClick.bind(this);
   }
 
   render() {
@@ -32,7 +36,7 @@ export default class App extends React.Component {
             <div>
             
             <div className="profile">
-            <img src = { 'https://graph.facebook.com/'+item.id+'/picture?type=small' }/>
+            <img src = { 'https://graph.facebook.com/'+item.id+'/picture?type=small' } onClick=""/>
             <span>{item.name}</span>
             </div>
            
@@ -47,11 +51,12 @@ export default class App extends React.Component {
             
             </div>
             )
-          
+            
           
 
           })}
-          
+          <Route path="/books" component={BookView}/>
+
         </div>
       )
     } else {
@@ -75,6 +80,10 @@ export default class App extends React.Component {
       )
 
     }
+
+  }
+  
+  imageClick() {
 
   }
 
