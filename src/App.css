@@ -4,6 +4,7 @@ div.profile {
   width: 25px;
   height: 25px;
   outline: 1px black;
+  float: left;
 }
 
 
