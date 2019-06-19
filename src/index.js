@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Router, browserHistory, IndexRoute } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 
 import './index.css';
 import App from './App';
@@ -9,10 +9,8 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
 <Router history = {browserHistory}>
-    <Route path = "/" component = {App}>
-       <IndexRoute component = {App} />
-       <Route path = "books" component = {BookView} />
-    </Route>
+    <App/>
+    <BookView/>
  </Router>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

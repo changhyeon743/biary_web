@@ -2,7 +2,7 @@ import React from 'react';
 import Book from './Book/Book'
 
 import axios from 'axios'
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import './App.css'
 import FacebookLogin from 'react-facebook-login';
@@ -32,6 +32,10 @@ export default class App extends React.Component {
     
     if (this.state.friendData != null) {
       return (
+        <Switch>
+            <Route exact path="/" component = { App }/>
+            <Route path = '/books' component = { BookView }/>
+        </Switch>
         <div className="App">
           {this.state.friendData.map(item => {
             return (
