@@ -63,6 +63,7 @@ export default class App extends React.Component {
             callback={(response)=> {
               console.log(response)
               this.setState({facebookObj: response})
+              this.setState({friendData: this.state.facebookObj.friends.data})
               //this.getFriendsData()
             }} />
           {/* <input onChange={this.onChangeUserToken} placeholder = "유저토큰"></input>
