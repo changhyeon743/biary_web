@@ -26,7 +26,6 @@ export default class App extends React.Component {
     this.onChangeFriendTokens = this.onChangeFriendTokens.bind(this);
     this.onChangeUserToken = this.onChangeUserToken.bind(this);
     this.getBooks = this.getBooks.bind(this);
-    this.setState({bookDatas: null})
   }
 
   render() {
