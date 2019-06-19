@@ -19,40 +19,47 @@ export default class App extends React.Component {
       bookDatas: Object,
       selfToken: String,
       friendToken: String,
-      friendData: null
+      friendData: null,
+      showPopup: Boolean
     }
 
     this.getFriendsData = this.getFriendsData.bind(this);
     this.onChangeFriendTokens = this.onChangeFriendTokens.bind(this);
     this.onChangeUserToken = this.onChangeUserToken.bind(this);
     this.getBooks = this.getBooks.bind(this);
+    this.togglePopup = this.togglePopup.bind(this);
   }
 
   render() {
-    
+
     if (this.state.friendData != null) {
       return (
-        
-        <div className="App">
-          {this.state.friendData.map((item,i) => {
-            return (
-            <div className="profile" key={i}>
 
-            <img src = { 'https://graph.facebook.com/'+item.id+'/picture?type=small' } onClick={(e) => this.imageClick(item.id, e)}/>
-            <span>{item.name}</span>
-            </div>
+        <div className="App">
+          {this.state.friendData.map((item, i) => {
+            return (
+              <div className="profile" key={i}>
+
+                <img src={'https://graph.facebook.com/' + item.id + '/picture?type=small'} onClick={(e) => this.imageClick(item.id, e)} />
+                <span>{item.name}</span>
+              </div>
             )
           })}
-          <div>
-            
-          {this.state.bookDatas != null && this.state.bookDatas[0].data.books.map(book => {
+          {/* {this.state.bookDatas != null && this.state.bookDatas[0].data.books.map(book => {
               return <Book
                 key={book.token}
                 imgLink={book.imageURL}
                 title={book.title}
               />
-            })}
-          </div>
+            })} */}
+          {this.state.showPopup ?
+            <Popup
+              bookDatas={this.state.bookDatas}
+
+              closePopup={this.togglePopup.bind(this)}
+            />
+            : null
+          }
         </div>
       )
     } else {
@@ -63,9 +70,9 @@ export default class App extends React.Component {
             autoLoad={true}
             fields="name,email,friends,picture"
             scope="public_profile,user_friends"
-            callback={(response)=> {
+            callback={(response) => {
               console.log(response)
-              this.setState({friendData: response.friends.data[0]})
+              this.setState({ friendData: response.friends.data[0] })
               //this.getFriendsData()
             }} />
           {/* <input onChange={this.onChangeUserToken} placeholder = "유저토큰"></input>
@@ -77,21 +84,28 @@ export default class App extends React.Component {
     }
 
   }
-  
-  imageClick(id,e) {
+
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+  }
+
+  imageClick(id, e) {
 
     this.getBooks(id);
     console.log(this.state.bookDatas)
+    this.togglePopup();
   }
 
   onChangeUserToken(e) {
-    this.setState({userToken: e.currentTarget.value});
+    this.setState({ userToken: e.currentTarget.value });
   }
   onChangeFriendTokens(e) {
-    this.setState({friendToken: e.currentTarget.value});
+    this.setState({ friendToken: e.currentTarget.value });
   }
   getBooks(friendID) {
-    let data = "["+(friendID)+"]";
+    let data = "[" + (friendID) + "]";
     axios.post('/fetch/friends_', {
       friendList: data
     })
@@ -104,7 +118,7 @@ export default class App extends React.Component {
   getFriendsData() {
     let data2 = this.state.facebookObj.friends.data
     console.log(data2)
-    let data = "["+(this.state.facebookObj.friends.data.map((e)=>{return '"'+e.id+'"'}).join(","))+"]";
+    let data = "[" + (this.state.facebookObj.friends.data.map((e) => { return '"' + e.id + '"' }).join(",")) + "]";
     console.log(data)
     axios.post('/fetch/friends_', {
       friendList: data
