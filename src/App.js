@@ -59,7 +59,6 @@ export default class App extends React.Component {
 
           })}
         <Switch>
-            <Route exact path="/" component = { App }/>
             <Route path = '/books' component = { BookView }/>
         </Switch>
         </div>
@@ -81,6 +80,9 @@ export default class App extends React.Component {
           {/* <input onChange={this.onChangeUserToken} placeholder = "유저토큰"></input>
           <input onChange={this.onChangeFriendTokens} placeholder = "친구토큰"></input>
           <button onClick={this.getFriendsData}>클릭</button> */}
+          <Switch>
+            <Route path = '/books' component = { BookView }/>
+        </Switch>
         </div>
       )
 
