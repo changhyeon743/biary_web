@@ -21,7 +21,7 @@
     overflow: scroll; 
   }
   .popup_inner > button {
-    position: absolute;
+    position: fixed;
     right: 32px;
     top: 32px;
     background: none;
