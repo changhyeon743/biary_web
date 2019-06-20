@@ -8,7 +8,7 @@
 
 div.Book {
     width: 83px;
-    height: 128px;
+    height: auto;
     outline: 1px black;
     padding: 8px;
     margin: 16px;

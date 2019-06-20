@@ -19,6 +19,8 @@
     border-radius: 20px;  
     background: white; 
     overflow: scroll; 
+    display: flex;
+    flex-wrap: wrap;
   }
   .popup_inner > button {
     position: absolute;
