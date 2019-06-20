@@ -1,17 +1,18 @@
 @font-face { font-family: 'BMJUA'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff'); font-weight: normal; font-style: normal; }
+@import url(https://cdn.jsdelivr.net/gh/theeluwin/NotoSansKR-Hestia@master/stylesheets/NotoSansKR-Hestia.css);
 
 * {
-    font-family: BMJUA;
+    font-family: 'Noto Sans Korean', sans-serif;
     padding: 0px;
     margin: 0px;
 }
 
 div.Book {
     width: 83px;
-    height: 153px;
+    height: auto;
     outline: 1px black;
     padding: 8px;
-    margin: 16px;
+    margin: 8px 16px;
     float: left;
 }
 div.Book > img {
@@ -19,5 +20,5 @@ div.Book > img {
     height: auto;
 }
 div.Book > span {
-    font-size: 9px;
+    font-size: 18px;
 }
