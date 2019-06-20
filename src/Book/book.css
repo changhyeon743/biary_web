@@ -8,7 +8,7 @@
 
 div.Book {
     width: 83px;
-    height: auto;
+    height: 153px;
     outline: 1px black;
     padding: 8px;
     margin: 16px;
@@ -16,8 +16,8 @@ div.Book {
 }
 div.Book > img {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 div.Book > span {
-    font-size: 13px;
+    font-size: 9px;
 }
